@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forms</title>
-  </head>
-  <body></body>
+</head>
+<style>
+    .invalid {
+        border-color: red;
+    }
+    
+    #error {
+        color: red
+    }
+</style>
+
+<body>
+
+    <form id="form" name="domForm">
+        <fieldset name="userFields">
+            <legend>LOGIN INFO</legend>
+            FullName: <input type="text" name="FullName"> Email: <input type="email" name="Email"> Password: <input type="text" name="Password">
+            <input type="submit" value="Sign Up" onclick="validateForm();return false">
+        </fieldset>
+    </form>
+    <div id="error" style="color:red"></div><br>
+
+
+    <script>
+        function validateForm() {
+            var name = document.forms["form"]["FullName"].value
+            var mail = document.forms["form"]["Email"].value
+            var pass = document.forms["form"]["Password"].value
+            if (name == "" || mail == "" || pass == "") {
+                document.getElementById("error").innerHTML = "*Name.can't.be.empty!*";
+            } else
+
+
+            function submit() {
+                DispWin = window.open('', 'NewWin', 'toolbar=no,status=no,width=300,height=200')
+                message = "<ul><li><b>FULLNAME: </b>" + document.form.FullName.value;
+                message += "<li><b>EMAIL: </b>" + document.form.Email.value;
+                message += "<li><b>PASSWORD: </b>" + document.form.Password.value + "</ul>";
+                DispWin.document.write(message);
+            }
+
+        }
+    </script>
+</body>
+
 </html>
