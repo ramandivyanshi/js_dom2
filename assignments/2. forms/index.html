@@ -37,15 +37,9 @@
             if (name == "" || mail == "" || pass == "") {
                 document.getElementById("error").innerHTML = "*Name.can't.be.empty!*";
             } else
+                document.myForm.submit();
 
-
-            function submit() {
-                DispWin = window.open('', 'NewWin', 'toolbar=no,status=no,width=300,height=200')
-                message = "<ul><li><b>FULLNAME: </b>" + document.form.FullName.value;
-                message += "<li><b>EMAIL: </b>" + document.form.Email.value;
-                message += "<li><b>PASSWORD: </b>" + document.form.Password.value + "</ul>";
-                DispWin.document.write(message);
-            }
+         
 
         }
     </script>
