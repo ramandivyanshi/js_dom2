@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Basic Counter App</title>
-  </head>
-  <body></body>
+    <link rel="stylesheet" href="./stylesheet/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>COUNTER VALUE</h1>
+        <h1 id="counter">0</h1>
+        <button id="incre">Increment</button>
+        <button id="reset">Reset</button>
+        <button id="decre">decrement</button>
+    </div>
+    <script>
+        var a = 0;
+        var add = function(valueToAdd) {
+            a += valueToAdd;
+            document.getElementById('counter').innerHTML = a; //f to inc var
+        }
+        var addButton = document.querySelector("#incre");
+        addButton.addEventListener("click", function() {
+            add(1); //assign increment f to add button
+        })
+
+
+        var reset = function() {
+            a = 0;
+            document.getElementById('counter').innerHTML = 0;
+        }
+        var resetButton = document.querySelector("#reset");
+        resetButton.addEventListener("click", function() {
+            reset();
+        })
+
+
+        var d = a;
+        var less = function(valueToless) {
+            a -= valueToless;
+            document.getElementById('counter').innerHTML = a; // f to dec var 
+        }
+        var lessButton = document.querySelector("#decre");
+        lessButton.addEventListener("click", function() {
+            less(1); //assign decrement f to button
+        })
+    </script>
+</body>
+
 </html>
